@@ -1,0 +1,3 @@
+grant codeBase "file:c:/Users/Nuno/Documents/NetBeansProjects/RmiClient/-" {
+	permission java.security.AllPermission;
+};

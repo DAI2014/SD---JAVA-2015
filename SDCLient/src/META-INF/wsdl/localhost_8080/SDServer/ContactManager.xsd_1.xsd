@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://WebServices/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://WebServices/">
+
+<xs:element name="getContactList" type="tns:getContactList"/>
+
+<xs:element name="getContactListResponse" type="tns:getContactListResponse"/>
+
+<xs:element name="getIp" type="tns:getIp"/>
+
+<xs:element name="getIpResponse" type="tns:getIpResponse"/>
+
+<xs:element name="getLocation" type="tns:getLocation"/>
+
+<xs:element name="getLocationResponse" type="tns:getLocationResponse"/>
+
+<xs:element name="getMessage" type="tns:getMessage"/>
+
+<xs:element name="getMessageResponse" type="tns:getMessageResponse"/>
+
+<xs:element name="sendMessage" type="tns:sendMessage"/>
+
+<xs:element name="sendMessageResponse" type="tns:sendMessageResponse"/>
+
+<xs:complexType name="getLocation">
+<xs:sequence>
+<xs:element name="macAddress" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLocationResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getIp">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getIpResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getContactList">
+<xs:sequence>
+<xs:element name="ip" type="xs:string" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="curso" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getContactListResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:presences" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="presences">
+<xs:sequence>
+<xs:element name="curso" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="ip" type="xs:string" minOccurs="0"/>
+<xs:element name="lastSeen" type="xs:long"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getMessage">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="tokens" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="macAddress" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getMessageResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:messages" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="messages">
+<xs:sequence>
+<xs:element name="coordenadas" type="xs:string" minOccurs="0"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="owner" type="xs:string" minOccurs="0"/>
+<xs:element name="place" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sendMessage">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="coordenadas" type="xs:string" minOccurs="0"/>
+<xs:element name="owner" type="xs:string" minOccurs="0"/>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+<xs:element name="macAddress" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sendMessageResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
